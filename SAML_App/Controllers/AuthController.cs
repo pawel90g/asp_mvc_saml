@@ -52,7 +52,7 @@ namespace SAML_App.Controllers
             return Redirect(returnUrl);
         }
 
-        [HttpPost("Logout")]
+        [HttpGet("Logout")]
         //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
