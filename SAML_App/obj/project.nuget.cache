@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U+RSy+wdzwk9CyftDnJc+PMUyPRltrxCNgQxFLoVoxJub8yPerhwVPJJsgpculTepepNskEHYLGrLs3pNR943A==",
+  "dgSpecHash": "DHd8kzzt4Kg5L9ZRoDinICqiYqdfeB1CFMZN6jdpwBCpKQhMpX+xSvrD6RMLNIvRfVLMtpo150DD/wgCnua2Qw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\garbacp\\source\\repos\\SAML_App\\SAML_App\\SAML_App.csproj",
+  "projectFilePath": "C:\\Users\\garbacp\\source\\repos\\asp_mvc_saml\\SAML_App\\SAML_App.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\garbacp\\.nuget\\packages\\itfoxtec.identity.saml2\\4.8.2\\itfoxtec.identity.saml2.4.8.2.nupkg.sha512",
     "C:\\Users\\garbacp\\.nuget\\packages\\itfoxtec.identity.saml2.mvccore\\4.8.2\\itfoxtec.identity.saml2.mvccore.4.8.2.nupkg.sha512",

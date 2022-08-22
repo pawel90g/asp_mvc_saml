@@ -7410,11 +7410,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\garbacp\\source\\repos\\SAML_App\\SAML_App\\SAML_App.csproj",
+      "projectUniqueName": "C:\\Users\\garbacp\\source\\repos\\asp_mvc_saml\\SAML_App\\SAML_App.csproj",
       "projectName": "SAML_App",
-      "projectPath": "C:\\Users\\garbacp\\source\\repos\\SAML_App\\SAML_App\\SAML_App.csproj",
+      "projectPath": "C:\\Users\\garbacp\\source\\repos\\asp_mvc_saml\\SAML_App\\SAML_App.csproj",
       "packagesPath": "C:\\Users\\garbacp\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\garbacp\\source\\repos\\SAML_App\\SAML_App\\obj\\",
+      "outputPath": "C:\\Users\\garbacp\\source\\repos\\asp_mvc_saml\\SAML_App\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\garbacp\\AppData\\Roaming\\NuGet\\NuGet.Config",
