@@ -19,7 +19,7 @@ namespace SAML_App.Controllers
         const string relayStateReturnUrl = "ReturnUrl";
         private readonly Saml2Configuration config;
 
-        public AuthController(IOptions<Saml2Configuration> configAccessor) => 
+        public AuthController(IOptions<Saml2Configuration> configAccessor) =>
             config = configAccessor.Value;
 
         [Route("Login")]
@@ -53,7 +53,7 @@ namespace SAML_App.Controllers
         }
 
         [HttpPost("Logout")]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
             if (!User.Identity.IsAuthenticated)
