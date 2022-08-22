@@ -24,8 +24,8 @@
     ".NETCoreApp,Version=v3.1": {
       "SAML_App/1.0.0": {
         "dependencies": {
-          "ITfoxtec.Identity.Saml2": "4.8.2",
-          "ITfoxtec.Identity.Saml2.MvcCore": "4.8.2",
+          "ITfoxtec.Identity.Saml2": "4.0.8",
+          "ITfoxtec.Identity.Saml2.MvcCore": "4.0.8",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.5",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
@@ -317,7 +317,7 @@
           "SAML_App.dll": {}
         }
       },
-      "ITfoxtec.Identity.Saml2/4.8.2": {
+      "ITfoxtec.Identity.Saml2/4.0.8": {
         "dependencies": {
           "Microsoft.IdentityModel.Tokens.Saml": "5.4.0",
           "System.IdentityModel.Tokens.Jwt": "5.4.0",
@@ -327,17 +327,17 @@
         },
         "runtime": {
           "lib/netcoreapp3.1/ITfoxtec.Identity.Saml2.dll": {
-            "assemblyVersion": "4.8.2.0",
-            "fileVersion": "4.8.2.0"
+            "assemblyVersion": "4.0.8.0",
+            "fileVersion": "4.0.8.0"
           }
         },
         "compile": {
           "lib/netcoreapp3.1/ITfoxtec.Identity.Saml2.dll": {}
         }
       },
-      "ITfoxtec.Identity.Saml2.MvcCore/4.8.2": {
+      "ITfoxtec.Identity.Saml2.MvcCore/4.0.8": {
         "dependencies": {
-          "ITfoxtec.Identity.Saml2": "4.8.2",
+          "ITfoxtec.Identity.Saml2": "4.0.8",
           "Microsoft.IdentityModel.Tokens.Saml": "5.4.0",
           "System.IdentityModel.Tokens.Jwt": "5.4.0",
           "System.Runtime.InteropServices": "4.3.0",
@@ -346,8 +346,8 @@
         },
         "runtime": {
           "lib/netcoreapp3.1/ITfoxtec.Identity.Saml2.MvcCore.dll": {
-            "assemblyVersion": "4.8.2.0",
-            "fileVersion": "4.8.2.0"
+            "assemblyVersion": "4.0.8.0",
+            "fileVersion": "4.0.8.0"
           }
         },
         "compile": {
@@ -3544,19 +3544,19 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ITfoxtec.Identity.Saml2/4.8.2": {
+    "ITfoxtec.Identity.Saml2/4.0.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-w0yq5XgKM6xxKMI0polueozkf/pHv26Bn31fq2pHXPOxkFssgrWBy6G1FnG3YArwNSSkElr4Skc/VdQrXyrn4Q==",
-      "path": "itfoxtec.identity.saml2/4.8.2",
-      "hashPath": "itfoxtec.identity.saml2.4.8.2.nupkg.sha512"
+      "sha512": "sha512-8PUI7Pf064VBgKfiFeGOOq90FCwkQl9EFvQe41XQPRiC5996g3W4nNGMKYg/MsS1HO6/LWuCMQzQAgFjJAXI9w==",
+      "path": "itfoxtec.identity.saml2/4.0.8",
+      "hashPath": "itfoxtec.identity.saml2.4.0.8.nupkg.sha512"
     },
-    "ITfoxtec.Identity.Saml2.MvcCore/4.8.2": {
+    "ITfoxtec.Identity.Saml2.MvcCore/4.0.8": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-N2Ed31IULWDu9jPZH7LAwrDnO1DfgNHbt+s+7yTHRCtDtuCf98kcPRJaI/VCYtfDMjz7D7rATRK9EFh4PyLnNg==",
-      "path": "itfoxtec.identity.saml2.mvccore/4.8.2",
-      "hashPath": "itfoxtec.identity.saml2.mvccore.4.8.2.nupkg.sha512"
+      "sha512": "sha512-HmaWJO17Tg+rE6aik0Dt8hW5uMikhCKD1lJjPU1ZN/SwhgZQw8o3pbGu6W6hgfhzx1YtvPTzr6wVVeftqCdf8g==",
+      "path": "itfoxtec.identity.saml2.mvccore/4.0.8",
+      "hashPath": "itfoxtec.identity.saml2.mvccore.4.0.8.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Html.Abstractions/2.2.0": {
       "type": "package",

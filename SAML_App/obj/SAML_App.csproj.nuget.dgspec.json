@@ -40,11 +40,11 @@
           "dependencies": {
             "ITfoxtec.Identity.Saml2": {
               "target": "Package",
-              "version": "[4.8.2, )"
+              "version": "[4.0.8, )"
             },
             "ITfoxtec.Identity.Saml2.MvcCore": {
               "target": "Package",
-              "version": "[4.8.2, )"
+              "version": "[4.0.8, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",

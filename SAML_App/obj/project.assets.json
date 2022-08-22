@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "ITfoxtec.Identity.Saml2/4.8.2": {
+      "ITfoxtec.Identity.Saml2/4.0.8": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Tokens.Saml": "5.4.0",
@@ -18,10 +18,10 @@
           "lib/netcoreapp3.1/ITfoxtec.Identity.Saml2.dll": {}
         }
       },
-      "ITfoxtec.Identity.Saml2.MvcCore/4.8.2": {
+      "ITfoxtec.Identity.Saml2.MvcCore/4.0.8": {
         "type": "package",
         "dependencies": {
-          "ITfoxtec.Identity.Saml2": "4.8.2",
+          "ITfoxtec.Identity.Saml2": "4.0.8",
           "Microsoft.IdentityModel.Tokens.Saml": "5.4.0",
           "System.IdentityModel.Tokens.Jwt": "5.4.0",
           "System.Runtime.InteropServices": "4.3.0",
@@ -2202,46 +2202,50 @@
     }
   },
   "libraries": {
-    "ITfoxtec.Identity.Saml2/4.8.2": {
-      "sha512": "w0yq5XgKM6xxKMI0polueozkf/pHv26Bn31fq2pHXPOxkFssgrWBy6G1FnG3YArwNSSkElr4Skc/VdQrXyrn4Q==",
+    "ITfoxtec.Identity.Saml2/4.0.8": {
+      "sha512": "8PUI7Pf064VBgKfiFeGOOq90FCwkQl9EFvQe41XQPRiC5996g3W4nNGMKYg/MsS1HO6/LWuCMQzQAgFjJAXI9w==",
       "type": "package",
-      "path": "itfoxtec.identity.saml2/4.8.2",
+      "path": "itfoxtec.identity.saml2/4.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "itfoxtec.identity.saml2.4.8.2.nupkg.sha512",
+        "itfoxtec.identity.saml2.4.0.8.nupkg.sha512",
         "itfoxtec.identity.saml2.nuspec",
-        "lib/net461/ITfoxtec.Identity.Saml2.dll",
-        "lib/net461/ITfoxtec.Identity.Saml2.xml",
+        "lib/net462/ITfoxtec.Identity.Saml2.dll",
+        "lib/net462/ITfoxtec.Identity.Saml2.xml",
         "lib/net472/ITfoxtec.Identity.Saml2.dll",
         "lib/net472/ITfoxtec.Identity.Saml2.xml",
-        "lib/net5.0/ITfoxtec.Identity.Saml2.dll",
-        "lib/net5.0/ITfoxtec.Identity.Saml2.xml",
-        "lib/net6.0/ITfoxtec.Identity.Saml2.dll",
-        "lib/net6.0/ITfoxtec.Identity.Saml2.xml",
+        "lib/netcoreapp2.1/ITfoxtec.Identity.Saml2.dll",
+        "lib/netcoreapp2.1/ITfoxtec.Identity.Saml2.xml",
+        "lib/netcoreapp2.2/ITfoxtec.Identity.Saml2.dll",
+        "lib/netcoreapp2.2/ITfoxtec.Identity.Saml2.xml",
+        "lib/netcoreapp3.0/ITfoxtec.Identity.Saml2.dll",
+        "lib/netcoreapp3.0/ITfoxtec.Identity.Saml2.xml",
         "lib/netcoreapp3.1/ITfoxtec.Identity.Saml2.dll",
         "lib/netcoreapp3.1/ITfoxtec.Identity.Saml2.xml",
         "lib/netstandard2.1/ITfoxtec.Identity.Saml2.dll",
         "lib/netstandard2.1/ITfoxtec.Identity.Saml2.xml"
       ]
     },
-    "ITfoxtec.Identity.Saml2.MvcCore/4.8.2": {
-      "sha512": "N2Ed31IULWDu9jPZH7LAwrDnO1DfgNHbt+s+7yTHRCtDtuCf98kcPRJaI/VCYtfDMjz7D7rATRK9EFh4PyLnNg==",
+    "ITfoxtec.Identity.Saml2.MvcCore/4.0.8": {
+      "sha512": "HmaWJO17Tg+rE6aik0Dt8hW5uMikhCKD1lJjPU1ZN/SwhgZQw8o3pbGu6W6hgfhzx1YtvPTzr6wVVeftqCdf8g==",
       "type": "package",
-      "path": "itfoxtec.identity.saml2.mvccore/4.8.2",
+      "path": "itfoxtec.identity.saml2.mvccore/4.0.8",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "itfoxtec.identity.saml2.mvccore.4.8.2.nupkg.sha512",
+        "itfoxtec.identity.saml2.mvccore.4.0.8.nupkg.sha512",
         "itfoxtec.identity.saml2.mvccore.nuspec",
-        "lib/net461/ITfoxtec.Identity.Saml2.MvcCore.dll",
-        "lib/net461/ITfoxtec.Identity.Saml2.MvcCore.xml",
+        "lib/net462/ITfoxtec.Identity.Saml2.MvcCore.dll",
+        "lib/net462/ITfoxtec.Identity.Saml2.MvcCore.xml",
         "lib/net472/ITfoxtec.Identity.Saml2.MvcCore.dll",
         "lib/net472/ITfoxtec.Identity.Saml2.MvcCore.xml",
-        "lib/net5.0/ITfoxtec.Identity.Saml2.MvcCore.dll",
-        "lib/net5.0/ITfoxtec.Identity.Saml2.MvcCore.xml",
-        "lib/net6.0/ITfoxtec.Identity.Saml2.MvcCore.dll",
-        "lib/net6.0/ITfoxtec.Identity.Saml2.MvcCore.xml",
+        "lib/netcoreapp2.1/ITfoxtec.Identity.Saml2.MvcCore.dll",
+        "lib/netcoreapp2.1/ITfoxtec.Identity.Saml2.MvcCore.xml",
+        "lib/netcoreapp2.2/ITfoxtec.Identity.Saml2.MvcCore.dll",
+        "lib/netcoreapp2.2/ITfoxtec.Identity.Saml2.MvcCore.xml",
+        "lib/netcoreapp3.0/ITfoxtec.Identity.Saml2.MvcCore.dll",
+        "lib/netcoreapp3.0/ITfoxtec.Identity.Saml2.MvcCore.xml",
         "lib/netcoreapp3.1/ITfoxtec.Identity.Saml2.MvcCore.dll",
         "lib/netcoreapp3.1/ITfoxtec.Identity.Saml2.MvcCore.xml"
       ]
@@ -7399,8 +7403,8 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "ITfoxtec.Identity.Saml2 >= 4.8.2",
-      "ITfoxtec.Identity.Saml2.MvcCore >= 4.8.2",
+      "ITfoxtec.Identity.Saml2 >= 4.0.8",
+      "ITfoxtec.Identity.Saml2.MvcCore >= 4.0.8",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.5"
     ]
   },
@@ -7443,11 +7447,11 @@
         "dependencies": {
           "ITfoxtec.Identity.Saml2": {
             "target": "Package",
-            "version": "[4.8.2, )"
+            "version": "[4.0.8, )"
           },
           "ITfoxtec.Identity.Saml2.MvcCore": {
             "target": "Package",
-            "version": "[4.8.2, )"
+            "version": "[4.0.8, )"
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",

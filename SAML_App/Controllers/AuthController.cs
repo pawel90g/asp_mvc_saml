@@ -1,6 +1,7 @@
 ﻿using ITfoxtec.Identity.Saml2;
 using ITfoxtec.Identity.Saml2.MvcCore;
 using ITfoxtec.Identity.Saml2.Schemas;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -34,6 +35,7 @@ namespace SAML_App.Controllers
         public async Task<IActionResult> AssertionConsumerService()
         {
             var binding = new Saml2PostBinding();
+
             var saml2AuthnResponse = new Saml2AuthnResponse(config);
 
             binding.ReadSamlResponse(Request.ToGenericHttpRequest(), saml2AuthnResponse);
@@ -41,6 +43,7 @@ namespace SAML_App.Controllers
             {
                 throw new AuthenticationException($"SAML Response status: {saml2AuthnResponse.Status}");
             }
+
             binding.Unbind(Request.ToGenericHttpRequest(), saml2AuthnResponse);
             await saml2AuthnResponse.CreateSession(HttpContext, claimsTransform: (claimsPrincipal) => ClaimsTransform.Transform(claimsPrincipal));
 
