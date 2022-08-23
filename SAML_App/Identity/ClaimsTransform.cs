@@ -10,9 +10,7 @@ namespace SAML_App.Identity
         public static ClaimsPrincipal Transform(ClaimsPrincipal incomingPrincipal)
         {
             if (!incomingPrincipal.Identity.IsAuthenticated)
-            {
                 return incomingPrincipal;
-            }
 
             return CreateClaimsPrincipal(incomingPrincipal);
         }
