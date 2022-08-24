@@ -1,5 +1,6 @@
 ﻿using ITfoxtec.Identity.Saml2;
 using ITfoxtec.Identity.Saml2.Claims;
+using ITfoxtec.Identity.Saml2.Http;
 using ITfoxtec.Identity.Saml2.MvcCore;
 using ITfoxtec.Identity.Saml2.Schemas;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -78,8 +79,11 @@ namespace SAML_App.Controllers
             }
 
             var binding = new Saml2PostBinding();
+
             var saml2LogoutRequest = await new Saml2LogoutRequest(config, User).DeleteSession(HttpContext);
-            return Redirect("~/");
+
+            return await AzureLogout();
+            //return Redirect("~/");
         }
 
         [Route("LoggedOut")]
@@ -104,8 +108,6 @@ namespace SAML_App.Controllers
 
                 await ticketStore.RemoveAsync(logoutRequest.SessionIndex);
 
-                //HttpContext.User = Saml2LogoutRequestToClaimsPrincipal(logoutRequest);
-
                 await logoutRequest.DeleteSession(HttpContext);
             }
             catch (Exception exc)
@@ -115,8 +117,11 @@ namespace SAML_App.Controllers
                 status = Saml2StatusCodes.RequestDenied;
             }
 
-            var responsebinding = new Saml2PostBinding();
-            responsebinding.RelayState = requestBinding.RelayState;
+            var responsebinding = new Saml2PostBinding
+            {
+                RelayState = requestBinding.RelayState
+            };
+
             var saml2LogoutResponse = new Saml2LogoutResponse(config)
             {
                 InResponseToAsString = logoutRequest.IdAsString,
@@ -126,17 +131,13 @@ namespace SAML_App.Controllers
             return responsebinding.Bind(saml2LogoutResponse).ToActionResult();
         }
 
-        private ClaimsPrincipal Saml2LogoutRequestToClaimsPrincipal(Saml2LogoutRequest logoutRequest) =>
-             new ClaimsPrincipal(
-                new ClaimsIdentity(
-                    claims: new List<Claim> {
-                        new Claim(ClaimTypes.NameIdentifier, logoutRequest.NameId.Value),
-                        new Claim(ClaimTypes.Email, logoutRequest.NameId.Value),
-                        new Claim(ClaimTypes.Name, logoutRequest.NameId.Value),
-                        new Claim(Saml2ClaimTypes.NameIdFormat, "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"),
-                        new Claim(Saml2ClaimTypes.NameId, logoutRequest.NameId.Value),
-                        new Claim(Saml2ClaimTypes.SessionIndex, logoutRequest.SessionIndex),
-                    },
-                    authenticationType: Saml2Constants.AuthenticationScheme));
+        private async Task<IActionResult> AzureLogout()
+        {
+            var binding = new Saml2PostBinding();
+
+            var logoutRequest = new Saml2LogoutRequest(config, User);
+
+            return binding.Bind(logoutRequest).ToActionResult();
+        }
     }
 }
