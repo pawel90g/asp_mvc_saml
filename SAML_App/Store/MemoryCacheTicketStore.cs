@@ -10,11 +10,7 @@ namespace SAML_App.Store
 {
     public class MemoryCacheTicketStore : ITicketStore
     {
-        //private readonly IMemoryCache cache;
         private static readonly Dictionary<string, object> cache = new Dictionary<string, object>();
-
-        //public MemoryCacheTicketStore(IMemoryCache cache) => 
-        //    this.cache = cache;
 
         public MemoryCacheTicketStore() { }
 
