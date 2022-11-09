@@ -1,0 +1,6 @@
+### wihout session id header
+GET https://localhost:5001/api HTTP/1.1
+
+### wih session id header
+GET https://localhost:5001/api HTTP/1.1
+Session-Id: _703ccf96-a0a9-4781-a1a8-a36ac077c400
