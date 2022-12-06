@@ -6,6 +6,8 @@ using ITfoxtec.Identity.Saml2.Schemas.Metadata;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using SAML_App;
+using SAML_App.Options;
 using SAML_App.Store;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,8 +17,12 @@ services.AddRazorPages();
 
 services.AddMemoryCache();
 
+services.Configure<RedisCacheOptions>(builder.Configuration.GetSection("RedisCache"));
+
 // services.AddSingleton<ITicketStore, MemoryCacheTicketStore>();
-services.AddSingleton<ITicketStore, RedisCacheTicketStore>();
+services.AddSingleton<IBackedupTicketStore, RedisCacheTicketStore>();
+
+services.AddHostedService<RedisNotificationsHandler>();
 
 services.Configure<Saml2Configuration>(builder.Configuration.GetSection("Saml2"));
 
@@ -38,7 +44,7 @@ services.Configure<Saml2Configuration>(saml2Configuration =>
     }
 });
 
-var ticketStore = services.BuildServiceProvider().GetService<ITicketStore>();
+var ticketStore = services.BuildServiceProvider().GetService<IBackedupTicketStore>();
 
 services.AddSaml2(sessionStore: ticketStore);
 

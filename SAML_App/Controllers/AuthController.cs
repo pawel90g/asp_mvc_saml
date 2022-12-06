@@ -1,9 +1,6 @@
 ﻿using ITfoxtec.Identity.Saml2;
-using ITfoxtec.Identity.Saml2.Claims;
-using ITfoxtec.Identity.Saml2.Http;
 using ITfoxtec.Identity.Saml2.MvcCore;
 using ITfoxtec.Identity.Saml2.Schemas;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -12,7 +9,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Security.Authentication;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace SAML_App.Controllers
@@ -24,10 +20,10 @@ namespace SAML_App.Controllers
         const string relayStateReturnUrl = "ReturnUrl";
 
         private readonly Saml2Configuration config;
-        private readonly ITicketStore ticketStore;
+        private readonly IBackedupTicketStore ticketStore;
 
         public AuthController(IOptions<Saml2Configuration> configAccessor,
-            ITicketStore ticketStore)
+            IBackedupTicketStore ticketStore)
         {
             config = configAccessor.Value;
             this.ticketStore = ticketStore;
@@ -137,7 +133,9 @@ namespace SAML_App.Controllers
 
             var logoutRequest = new Saml2LogoutRequest(config, User);
 
-            return binding.Bind(logoutRequest).ToActionResult();
+            var action = binding.Bind(logoutRequest).ToActionResult();
+            
+            return action;
         }
     }
 }

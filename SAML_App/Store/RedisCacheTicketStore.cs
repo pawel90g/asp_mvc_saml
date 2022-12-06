@@ -9,14 +9,14 @@ using Microsoft.Extensions.Configuration;
 
 namespace SAML_App.Store;
 
-internal class RedisCacheTicketStore : ITicketStore
+internal class RedisCacheTicketStore : IBackedupTicketStore
 {
     private IDistributedCache _cache;
 
     public RedisCacheTicketStore(IConfiguration configuration) =>
         _cache = new RedisCache(new RedisCacheOptions
         {
-            Configuration = configuration["RedisCache:ConnectionString"]
+            Configuration = configuration["RedisCache:ConnStr"]
         });
 
     public async Task<string> StoreAsync(AuthenticationTicket ticket)
@@ -27,25 +27,53 @@ internal class RedisCacheTicketStore : ITicketStore
         return key;
     }
 
-    public Task RenewAsync(string key, AuthenticationTicket ticket)
+    public async Task RenewAsync(string key, AuthenticationTicket ticket)
     {
         var options = new DistributedCacheEntryOptions();
-        var expiresUtc = ticket.Properties.ExpiresUtc;
-        if (expiresUtc.HasValue)
-        {
-            options.SetAbsoluteExpiration(expiresUtc.Value);
-        }
+        options.SetAbsoluteExpiration(new TimeSpan(0, 1, 0));
+
+        // var expiresUtc = ticket.Properties.ExpiresUtc;
+        // if (expiresUtc.HasValue)
+        // {
+        //     options.SetAbsoluteExpiration(expiresUtc.Value);
+        // }
+
         byte[] val = SerializeToBytes(ticket);
         _cache.Set(key, val, options);
+
+        await BackupAsync(key, ticket);
+    }
+
+    private Task BackupAsync(string key, AuthenticationTicket ticket)
+    {
+        var options = new DistributedCacheEntryOptions();
+        options.SetAbsoluteExpiration(new TimeSpan(0, 1, 30));
+
+        // var expiresUtc = ticket.Properties.ExpiresUtc;
+        // if (expiresUtc.HasValue)
+        // {
+        //     options.SetAbsoluteExpiration(expiresUtc.Value);
+        // }
+
+        byte[] val = SerializeToBytes(ticket);
+        _cache.Set($"{key}_bak", val, options);
+
         return Task.FromResult(0);
     }
 
     public Task<AuthenticationTicket> RetrieveAsync(string key)
     {
-        AuthenticationTicket ticket;
         byte[] bytes = null;
         bytes = _cache.Get(key);
-        ticket = DeserializeFromBytes(bytes);
+        var ticket = DeserializeFromBytes(bytes);
+        return Task.FromResult(ticket);
+    }
+
+    public Task<AuthenticationTicket> RetrieveFromBackupAsync(string key)
+    {
+        byte[] bytes = null;
+        bytes = _cache.Get($"{key}_bak");
+        var ticket = DeserializeFromBytes(bytes);
         return Task.FromResult(ticket);
     }
 
